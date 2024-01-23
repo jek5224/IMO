@@ -1,0 +1,129 @@
+<mujoco>
+  <default>
+    <motor ctrlrange="-1 1" ctrllimited="true"/>
+    <default class="body">
+      <geom type="capsule" condim="1" friction="1.0 0.05 0.05" solimp=".9 .99 .003" solref=".015 1"/>
+      <joint type="hinge" damping="0.1" stiffness="5" armature=".007" limited="true" solimplimit="0 .99 .01"/>
+      <site size=".04" group="3"/>
+      <default class="force-torque">
+        <site type="box" size=".01 .01 .02" rgba="1 0 0 1" />
+      </default>
+      <default class="touch">
+        <site type="capsule" rgba="0 0 1 .3"/>
+      </default>
+    </default>
+  </default>
+  <worldbody>
+  <body name="Hips" pos="0 0 0" childclass="body">
+    <freejoint name="Hips"/>
+    <site name="Hips" class="force-torque"/>
+    <geom name="Hips" type="sphere" pos="0 0 0" size=".09" density="2226"/>
+    <site name="Hips" class="touch" type="sphere" pos="0 0 0" size="0.091"/>
+    <body name="LeftUpLeg" pos="0.103457 1.857819 10.5485">
+      <joint name="LeftUpLeg_x" pos="0 0 0" axis="1 0 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+      <joint name="LeftUpLeg_y" pos="0 0 0" axis="0 1 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+      <joint name="LeftUpLeg_z" pos="0 0 0" axis="0 0 1" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+      <body name="LeftLeg" pos="43.5 -1.9e-05 -1e-05">
+        <joint name="LeftLeg_x" pos="0 0 0" axis="1 0 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+        <joint name="LeftLeg_y" pos="0 0 0" axis="0 1 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+        <joint name="LeftLeg_z" pos="0 0 0" axis="0 0 1" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+        <body name="LeftFoot" pos="42.372196 8e-06 0.0">
+          <joint name="LeftFoot_x" pos="0 0 0" axis="1 0 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+          <joint name="LeftFoot_y" pos="0 0 0" axis="0 1 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+          <joint name="LeftFoot_z" pos="0 0 0" axis="0 0 1" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+          <body name="LeftToe" pos="17.300003 1e-06 6e-06">
+            <joint name="LeftToe_x" pos="0 0 0" axis="1 0 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+            <joint name="LeftToe_y" pos="0 0 0" axis="0 1 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+            <joint name="LeftToe_z" pos="0 0 0" axis="0 0 1" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+          </body>
+        </body>
+      </body>
+    </body>
+    <body name="RightUpLeg" pos="0.103456 1.857821 -10.548498">
+      <joint name="RightUpLeg_x" pos="0 0 0" axis="1 0 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+      <joint name="RightUpLeg_y" pos="0 0 0" axis="0 1 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+      <joint name="RightUpLeg_z" pos="0 0 0" axis="0 0 1" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+      <body name="RightLeg" pos="43.500046 -3.1e-05 1.9e-05">
+        <joint name="RightLeg_x" pos="0 0 0" axis="1 0 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+        <joint name="RightLeg_y" pos="0 0 0" axis="0 1 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+        <joint name="RightLeg_z" pos="0 0 0" axis="0 0 1" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+        <body name="RightFoot" pos="42.372261 -4e-06 2.1e-05">
+          <joint name="RightFoot_x" pos="0 0 0" axis="1 0 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+          <joint name="RightFoot_y" pos="0 0 0" axis="0 1 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+          <joint name="RightFoot_z" pos="0 0 0" axis="0 0 1" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+          <body name="RightToe" pos="17.300016 3e-06 0.0">
+            <joint name="RightToe_x" pos="0 0 0" axis="1 0 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+            <joint name="RightToe_y" pos="0 0 0" axis="0 1 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+            <joint name="RightToe_z" pos="0 0 0" axis="0 0 1" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+          </body>
+        </body>
+      </body>
+    </body>
+    <body name="Spine" pos="6.901967 -2.603733 -2e-06">
+      <joint name="Spine_x" pos="0 0 0" axis="1 0 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+      <joint name="Spine_y" pos="0 0 0" axis="0 1 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+      <joint name="Spine_z" pos="0 0 0" axis="0 0 1" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+      <body name="Spine1" pos="12.588102 4e-06 -4e-06">
+        <joint name="Spine1_x" pos="0 0 0" axis="1 0 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+        <joint name="Spine1_y" pos="0 0 0" axis="0 1 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+        <joint name="Spine1_z" pos="0 0 0" axis="0 0 1" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+        <body name="Spine2" pos="12.343203 -4e-06 0.0">
+          <joint name="Spine2_x" pos="0 0 0" axis="1 0 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+          <joint name="Spine2_y" pos="0 0 0" axis="0 1 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+          <joint name="Spine2_z" pos="0 0 0" axis="0 0 1" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+          <body name="Neck" pos="25.832895 -1.1e-05 5e-06">
+            <joint name="Neck_x" pos="0 0 0" axis="1 0 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+            <joint name="Neck_y" pos="0 0 0" axis="0 1 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+            <joint name="Neck_z" pos="0 0 0" axis="0 0 1" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+            <body name="Head" pos="11.766605 3e-06 8e-06">
+              <joint name="Head_x" pos="0 0 0" axis="1 0 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+              <joint name="Head_y" pos="0 0 0" axis="0 1 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+              <joint name="Head_z" pos="0 0 0" axis="0 0 1" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+            </body>
+          </body>
+          <body name="LeftShoulder" pos="19.745905 -1.48036 6.000111">
+            <joint name="LeftShoulder_x" pos="0 0 0" axis="1 0 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+            <joint name="LeftShoulder_y" pos="0 0 0" axis="0 1 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+            <joint name="LeftShoulder_z" pos="0 0 0" axis="0 0 1" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+            <body name="LeftArm" pos="11.284124 7e-06 -1.7e-05">
+              <joint name="LeftArm_x" pos="0 0 0" axis="1 0 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+              <joint name="LeftArm_y" pos="0 0 0" axis="0 1 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+              <joint name="LeftArm_z" pos="0 0 0" axis="0 0 1" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+              <body name="LeftForeArm" pos="33.00005 3e-06 1.7e-05">
+                <joint name="LeftForeArm_x" pos="0 0 0" axis="1 0 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+                <joint name="LeftForeArm_y" pos="0 0 0" axis="0 1 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+                <joint name="LeftForeArm_z" pos="0 0 0" axis="0 0 1" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+                <body name="LeftHand" pos="25.200005 1e-05 1.1e-05">
+                  <joint name="LeftHand_x" pos="0 0 0" axis="1 0 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+                  <joint name="LeftHand_y" pos="0 0 0" axis="0 1 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+                  <joint name="LeftHand_z" pos="0 0 0" axis="0 0 1" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+                </body>
+              </body>
+            </body>
+          </body>
+          <body name="RightShoulder" pos="19.746092 -1.480387 -6.000073">
+            <joint name="RightShoulder_x" pos="0 0 0" axis="1 0 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+            <joint name="RightShoulder_y" pos="0 0 0" axis="0 1 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+            <joint name="RightShoulder_z" pos="0 0 0" axis="0 0 1" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+            <body name="RightArm" pos="11.284132 -4.5e-05 -1.5e-05">
+              <joint name="RightArm_x" pos="0 0 0" axis="1 0 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+              <joint name="RightArm_y" pos="0 0 0" axis="0 1 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+              <joint name="RightArm_z" pos="0 0 0" axis="0 0 1" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+              <body name="RightForeArm" pos="33.000092 3.1e-05 5e-06">
+                <joint name="RightForeArm_x" pos="0 0 0" axis="1 0 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+                <joint name="RightForeArm_y" pos="0 0 0" axis="0 1 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+                <joint name="RightForeArm_z" pos="0 0 0" axis="0 0 1" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+                <body name="RightHand" pos="25.199797 0.000145 0.000419">
+                  <joint name="RightHand_x" pos="0 0 0" axis="1 0 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+                  <joint name="RightHand_y" pos="0 0 0" axis="0 1 0" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+                  <joint name="RightHand_z" pos="0 0 0" axis="0 0 1" range="-90 90"stiffness="1000" damping="100" armature=".02"/>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </body>
+  </worldbody>
+</mujoco>
