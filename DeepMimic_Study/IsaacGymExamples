@@ -1,0 +1,13 @@
+1. 1080_balls_of_solitude.py
+gymutil argument parsing
+adding plane
+loading urdf asset
+resetting simulation and keyboard input action
+collision filtering
+setting body color
+
+2. actor_scaling.py
+scaling actor size
+
+3. apply_forces_at_pos.py
+tensor usage
